@@ -1,0 +1,38 @@
+{
+  "name": "hautgefuehl-app",
+  "version": "0.2.0-beta",
+  "description": "Beauty Salon Booking App for Hautgefühl, Warburg",
+  "type": "module",
+  "main": "src/salon-app.jsx",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview",
+    "lint": "eslint src --ext .js,.jsx"
+  },
+  "dependencies": {
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "lucide-react": "^0.311.0"
+  },
+  "devDependencies": {
+    "@vitejs/plugin-react": "^4.2.0",
+    "vite": "^5.0.0",
+    "eslint": "^8.54.0",
+    "eslint-plugin-react": "^7.33.0"
+  },
+  "keywords": [
+    "beauty",
+    "salon",
+    "booking",
+    "app",
+    "react",
+    "google-sheets"
+  ],
+  "author": "Alex (infoundanlage-source)",
+  "license": "UNLICENSED",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/YOUR_USERNAME/hautgefuehl-app.git"
+  }
+}
