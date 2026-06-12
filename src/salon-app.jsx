@@ -11,35 +11,58 @@ const CATEGORIES = [
 const SERVICES = [
   {id:1,name:"Laser Haarentfernung (Achseln)",dur:15,price:50,cat:"laser"},
   {id:2,name:"Laser Haarentfernung (Unterarme)",dur:35,price:90,cat:"laser"},
-  {id:3,name:"Laser Haarentfernung (Arme komplett)",dur:65,price:150,cat:"laser"},
-  {id:4,name:"Mini Tattoo",dur:90,price:90,cat:"laser"},
-  {id:5,name:"Fineline Tattoo",dur:120,price:120,cat:"laser"},
-  {id:6,name:"Wimpern 1:1 Neumodellage",dur:160,price:95,cat:"wimpern"},
-  {id:7,name:"Wimpern Volumen Neumodellage",dur:160,price:110,cat:"wimpern"},
-  {id:8,name:"Wimpern 1:1 Auffüllen",dur:75,price:52,cat:"wimpern"},
-  {id:9,name:"Wimpern Volumen Auffüllen",dur:75,price:60,cat:"wimpern"},
-  {id:10,name:"Yumi Lashes",dur:90,price:90,cat:"wimpern"},
-  {id:11,name:"Aquafacial Basic",dur:55,price:90,cat:"wimpern"},
-  {id:12,name:"Aquafacial Plus",dur:85,price:120,cat:"wimpern"},
-  {id:13,name:"Aquafacial Ultra",dur:90,price:150,cat:"wimpern"},
-  {id:14,name:"Permanent Make-Up Augenbrauen",dur:150,price:350,cat:"wimpern"},
-  {id:15,name:"Maniküre",dur:30,price:25,cat:"naegel"},
-  {id:16,name:"Shellack inkl. Maniküre",dur:60,price:35,cat:"naegel"},
-  {id:17,name:"Neumodellage mit Verlängerung",dur:120,price:60,cat:"naegel"},
-  {id:18,name:"Modellage Auffüllen",dur:90,price:45,cat:"naegel"},
-  {id:19,name:"Kosmetische Fußpflege",dur:60,price:45,cat:"naegel"},
-  {id:20,name:"Fußpflege mit UV-Lack",dur:70,price:52,cat:"naegel"},
+  {id:3,name:"Laser Haarentfernung (Oberschenkel)",dur:40,price:85,cat:"laser"},
+  {id:4,name:"Laser Haarentfernung (Arme komplett)",dur:65,price:150,cat:"laser"},
+  {id:5,name:"Mini Tattoo",dur:90,price:90,cat:"laser"},
+  {id:6,name:"Fineline Tattoo",dur:120,price:120,cat:"laser"},
+  {id:7,name:"Tattoo Beratung",dur:30,price:30,cat:"laser"},
+  {id:8,name:"Wimpern 1:1 Neumodellage",dur:160,price:95,cat:"wimpern"},
+  {id:9,name:"Wimpern Volumen Neumodellage",dur:160,price:110,cat:"wimpern"},
+  {id:10,name:"Wimpern 1:1 Auffüllen",dur:75,price:52,cat:"wimpern"},
+  {id:11,name:"Wimpern Volumen Auffüllen",dur:75,price:60,cat:"wimpern"},
+  {id:12,name:"Yumi Lashes (Lifting)",dur:90,price:90,cat:"wimpern"},
+  {id:13,name:"Aquafacial Basic",dur:55,price:90,cat:"wimpern"},
+  {id:14,name:"Aquafacial Plus",dur:85,price:120,cat:"wimpern"},
+  {id:15,name:"Aquafacial Ultra",dur:90,price:150,cat:"wimpern"},
+  {id:16,name:"Permanent Make-Up Augenbrauen",dur:150,price:350,cat:"wimpern"},
+  {id:17,name:"Permanent Make-Up Lippen",dur:150,price:380,cat:"wimpern"},
+  {id:18,name:"Maniküre",dur:30,price:25,cat:"naegel"},
+  {id:19,name:"Shellack inkl. Maniküre",dur:60,price:35,cat:"naegel"},
+  {id:20,name:"Neumodellage (Naturnagellänge)",dur:90,price:50,cat:"naegel"},
+  {id:21,name:"Neumodellage mit Verlängerung",dur:120,price:60,cat:"naegel"},
+  {id:22,name:"Modellage Auffüllen",dur:90,price:45,cat:"naegel"},
+  {id:23,name:"Kosmetische Fußpflege",dur:60,price:45,cat:"naegel"},
+  {id:24,name:"Fußpflege mit UV-Lack",dur:70,price:52,cat:"naegel"},
 ];
 const TIMES = ["09:00","09:30","10:00","10:30","11:00","11:30","12:00","13:00","13:30","14:00","14:30","15:00","15:30","16:00","16:30","17:00","17:30"];
 const MONTHS = ["Januar","Februar","März","April","Mai","Juni","Juli","August","September","Oktober","November","Dezember"];
 const DAYS_SHORT = ["Mo","Di","Mi","Do","Fr","Sa","So"];
 const INIT_BOOKINGS = [
-  {id:1,client:"Lisa Meier",service:"Wimpern 1:1 Neumodellage",specialist:"Selma",date:"2026-06-15",time:"09:00",status:"confirmed"},
-  {id:2,client:"Jana Koch",service:"Aquafacial Basic",specialist:"Selma",date:"2026-06-15",time:"11:00",status:"confirmed"},
-  {id:3,client:"Petra Wolf",service:"Laser Haarentfernung (Achseln)",specialist:"Regina",date:"2026-06-16",time:"10:00",status:"pending"},
-  {id:4,client:"Sabine Braun",service:"Shellack inkl. Maniküre",specialist:"Anna",date:"2026-06-17",time:"14:00",status:"confirmed"},
-  {id:5,client:"Marie Schulz",service:"Mini Tattoo",specialist:"Regina",date:"2026-06-18",time:"15:00",status:"confirmed"},
+  {id:1,client:"Lisa Meier",service:"Wimpern 1:1 Neumodellage",specialist:"Selma",date:"2026-06-15",time:"09:00",dur:160,price:95,status:"confirmed"},
+  {id:2,client:"Jana Koch",service:"Aquafacial Basic",specialist:"Selma",date:"2026-06-15",time:"13:00",dur:55,price:90,status:"confirmed"},
+  {id:3,client:"Petra Wolf",service:"Laser Haarentfernung (Achseln)",specialist:"Regina",date:"2026-06-16",time:"10:00",dur:15,price:50,status:"pending"},
+  {id:4,client:"Sabine Braun",service:"Shellack inkl. Maniküre",specialist:"Anna",date:"2026-06-17",time:"14:00",dur:60,price:35,status:"confirmed"},
+  {id:5,client:"Marie Schulz",service:"Mini Tattoo",specialist:"Regina",date:"2026-06-18",time:"15:00",dur:90,price:90,status:"confirmed"},
 ];
+
+function todayStr(){const t=new Date();return `${t.getFullYear()}-${String(t.getMonth()+1).padStart(2,"0")}-${String(t.getDate()).padStart(2,"0")}`;}
+
+// Freie Zeiten: Öffnungszeiten (So zu, Sa bis 14), Behandlungsdauer & belegte Slots der Fachkraft
+function availTimes(y,m,day,dur,specialist,bookings){
+  if(day==null)return[];
+  const dow=new Date(y,m,day).getDay();
+  if(dow===0)return[];
+  const close=dow===6?14*60:19*60;
+  const dateStr=`${y}-${String(m+1).padStart(2,"0")}-${String(day).padStart(2,"0")}`;
+  const busy=bookings
+    .filter(b=>b.status==="confirmed"&&b.date===dateStr&&b.specialist===specialist)
+    .map(b=>{const[h,mm]=b.time.split(":").map(Number);const s=h*60+mm;return[s,s+(b.dur||60)];});
+  return TIMES.filter(t=>{
+    const[h,mm]=t.split(":").map(Number);const s=h*60+mm;const e=s+dur;
+    if(e>close)return false;
+    return !busy.some(([bs,be])=>s<be&&e>bs);
+  });
+}
 
 function getDays(y,m){
   const first=new Date(y,m,1).getDay();
@@ -67,7 +90,8 @@ function MiniCal({year,month,setYear,setMonth,selDay,setSelDay,disablePast=true}
           if(!d) return <div key={i}/>;
           const isSel=selDay===d;
           const isToday=d===today.getDate()&&month===today.getMonth()&&year===today.getFullYear();
-          const isPast=disablePast&&new Date(year,month,d)<new Date(today.getFullYear(),today.getMonth(),today.getDate());
+          const isSunday=new Date(year,month,d).getDay()===0;
+          const isPast=(disablePast&&new Date(year,month,d)<new Date(today.getFullYear(),today.getMonth(),today.getDate()))||isSunday;
           return(
             <div key={i} style={{display:"flex",justifyContent:"center"}}>
               <button onClick={()=>!isPast&&setSelDay(d)} style={{
@@ -115,8 +139,9 @@ export default function HautgefuehlApp(){
   const [selSvc,setSelSvc]=useState(null);
   const [selDay,setSelDay]=useState(null);
   const [selTime,setSelTime]=useState(null);
-  const [calY,setCalY]=useState(2026);
-  const [calM,setCalM]=useState(5);
+  const NOW=new Date();
+  const [calY,setCalY]=useState(NOW.getFullYear());
+  const [calM,setCalM]=useState(NOW.getMonth());
   const [form,setForm]=useState({name:"",email:"",phone:""});
   const [done,setDone]=useState(false);
   const [showMail,setShowMail]=useState(false);
@@ -132,26 +157,30 @@ export default function HautgefuehlApp(){
   const [activeBooking,setActiveBooking]=useState(null);
   const [rebookDay,setRebookDay]=useState(null);
   const [rebookTime,setRebookTime]=useState(null);
-  const [rebookCalY,setRebookCalY]=useState(2026);
-  const [rebookCalM,setRebookCalM]=useState(5);
+  const [rebookCalY,setRebookCalY]=useState(NOW.getFullYear());
+  const [rebookCalM,setRebookCalM]=useState(NOW.getMonth());
   // new booking form (admin)
-  const [nb,setNb]=useState({client:"",catId:"",svcId:"",day:null,time:"",calY:2026,calM:5});
+  const [nb,setNb]=useState({client:"",catId:"",svcId:"",day:null,time:"",calY:NOW.getFullYear(),calM:NOW.getMonth()});
   // new promo form
   const [np,setNp]=useState({title:"",text:"",discount:"",category:"",expires:""});
   const [editPromoId,setEditPromoId]=useState(null);
 
-  useEffect(()=>{setTimeout(()=>setSplash(false),2800);},[]);
+  useEffect(()=>{const t=setTimeout(()=>setSplash(false),2800);return()=>clearTimeout(t);},[]);
 
-  const revenue=bookings.filter(b=>b.status==="confirmed").reduce((s,b)=>{
-    const sv=SERVICES.find(sv=>sv.name===b.service);return s+(sv?.price||0);
-  },0);
+  const revenue=bookings.filter(b=>b.status==="confirmed").reduce((s,b)=>s+(b.price??SERVICES.find(sv=>sv.name===b.service)?.price??0),0);
+  const emailOk=/^\S+@\S+\.\S+$/.test(form.email);
+  // Wochen-Chart aus echten Buchungen (aktuelle Woche, Mo–So)
+  const weekCounts=(()=>{const t=new Date();const mon=new Date(t.getFullYear(),t.getMonth(),t.getDate()-((t.getDay()+6)%7));const arr=[0,0,0,0,0,0,0];bookings.forEach(b=>{if(b.status==="cancelled")return;const d=new Date(b.date+"T00:00:00");const diff=Math.round((d-mon)/86400000);if(diff>=0&&diff<7)arr[diff]++;});return arr;})();
+  const maxWeek=Math.max(...weekCounts,1);
   const activePromos=promos.filter(p=>p.active);
 
   function navTo(t){setTab(t);if(t==="home")setScreen("home");else if(t==="book"){setScreen("booking");setStep(1);}else if(t==="pro")setScreen("pro");}
 
   function book(){
-    if(!selCat||!selSvc||!selDay||!selTime||!form.name||!form.email)return;
-    setBookings(prev=>[...prev,{id:prev.length+1,client:form.name,service:selSvc.name,specialist:selCat.specialist,date:`${calY}-${String(calM+1).padStart(2,"0")}-${String(selDay).padStart(2,"0")}`,time:selTime,status:"confirmed"}]);
+    if(!selCat||!selSvc||!selDay||!selTime||!form.name||!emailOk)return;
+    // Sicherheitscheck: Slot noch frei?
+    if(!availTimes(calY,calM,selDay,selSvc.dur,selCat.specialist,bookings).includes(selTime)){setSelTime(null);return;}
+    setBookings(prev=>[...prev,{id:Math.max(0,...prev.map(b=>b.id))+1,client:form.name,service:selSvc.name,specialist:selCat.specialist,date:`${calY}-${String(calM+1).padStart(2,"0")}-${String(selDay).padStart(2,"0")}`,time:selTime,dur:selSvc.dur,price:selSvc.price,status:"confirmed"}]);
     setDone(true);
   }
   function reset(){setStep(1);setSelCat(null);setSelSvc(null);setSelDay(null);setSelTime(null);setForm({name:"",email:"",phone:""});setDone(false);setShowMail(false);setTab("home");setScreen("home");}
@@ -183,8 +212,8 @@ export default function HautgefuehlApp(){
     if(!nb.client||!nb.svcId||!nb.day||!nb.time)return;
     const svc=SERVICES.find(s=>s.id===parseInt(nb.svcId));
     const cat=CATEGORIES.find(c=>c.id===nb.catId);
-    setBookings(p=>[...p,{id:p.length+1,client:nb.client,service:svc.name,specialist:cat?.specialist||"",date:`${nb.calY}-${String(nb.calM+1).padStart(2,"0")}-${String(nb.day).padStart(2,"0")}`,time:nb.time,status:"confirmed"}]);
-    setNb({client:"",catId:"",svcId:"",day:null,time:"",calY:2026,calM:5});
+    setBookings(p=>[...p,{id:Math.max(0,...p.map(b=>b.id))+1,client:nb.client,service:svc.name,specialist:cat?.specialist||"",date:`${nb.calY}-${String(nb.calM+1).padStart(2,"0")}-${String(nb.day).padStart(2,"0")}`,time:nb.time,dur:svc.dur,price:svc.price,status:"confirmed"}]);
+    setNb({client:"",catId:"",svcId:"",day:null,time:"",calY:NOW.getFullYear(),calM:NOW.getMonth()});
     setModal(null);
   }
   function savePromo(){
@@ -289,7 +318,7 @@ export default function HautgefuehlApp(){
 
           <div style={{fontSize:12,fontWeight:700,color:"#2D1A27",letterSpacing:1,marginBottom:12}}>BEHANDLUNGEN</div>
           {CATEGORIES.map(cat=>{const Ic=cat.icon;return(
-            <div key={cat.id} className="card" style={{padding:18,display:"flex",alignItems:"center",gap:14,marginBottom:10,cursor:"pointer"}} onClick={()=>{setSelCat(cat);setStep(2);navTo("book");}}>
+            <div key={cat.id} className="card" style={{padding:18,display:"flex",alignItems:"center",gap:14,marginBottom:10,cursor:"pointer"}} onClick={()=>{navTo("book");setSelCat(cat);setSelSvc(null);}}>
               <div style={{width:52,height:52,borderRadius:16,background:cat.color,display:"flex",alignItems:"center",justifyContent:"center",flexShrink:0}}><Ic size={22} color={cat.accent} strokeWidth={1.8}/></div>
               <div style={{flex:1}}>
                 <div style={{fontWeight:700,fontSize:14,color:"#1C1B1F"}}>{cat.name}</div>
@@ -330,7 +359,7 @@ export default function HautgefuehlApp(){
               <div style={{fontSize:13,color:"#79607A",marginBottom:20}}>Bereich & Leistung wählen</div>
               {CATEGORIES.map(cat=>{const Ic=cat.icon;const open=selCat?.id===cat.id;return(
                 <div key={cat.id} style={{marginBottom:10}}>
-                  <div className="card" style={{padding:16,cursor:"pointer",border:`2px solid ${open?cat.accent:"transparent"}`,transition:"all 0.2s"}} onClick={()=>setSelCat(open?null:cat)}>
+                  <div className="card" style={{padding:16,cursor:"pointer",border:`2px solid ${open?cat.accent:"transparent"}`,transition:"all 0.2s"}} onClick={()=>{if(open){setSelCat(null);setSelSvc(null);}else{setSelCat(cat);if(selSvc&&selSvc.cat!==cat.id)setSelSvc(null);}}}>
                     <div style={{display:"flex",alignItems:"center",gap:12}}>
                       <div style={{width:46,height:46,borderRadius:14,background:cat.color,display:"flex",alignItems:"center",justifyContent:"center",flexShrink:0}}><Ic size={20} color={cat.accent}/></div>
                       <div style={{flex:1}}><div style={{fontWeight:700,fontSize:14,color:"#1C1B1F"}}>{cat.name}</div><div style={{fontSize:12,color:"#79607A",marginTop:1}}>{cat.specialist} · {SERVICES.filter(s=>s.cat===cat.id).length} Leistungen</div></div>
@@ -339,7 +368,7 @@ export default function HautgefuehlApp(){
                   </div>
                   {open&&<div style={{marginTop:6,display:"flex",flexDirection:"column",gap:6,animation:"fadeIn 0.2s ease"}}>
                     {SERVICES.filter(s=>s.cat===cat.id).map(svc=>(
-                      <div key={svc.id} className="svc-row" style={{background:selSvc?.id===svc.id?cat.color:"#FAFAFA",borderColor:selSvc?.id===svc.id?cat.accent:"transparent"}} onClick={()=>setSelSvc(svc)}>
+                      <div key={svc.id} className="svc-row" style={{background:selSvc?.id===svc.id?cat.color:"#FAFAFA",borderColor:selSvc?.id===svc.id?cat.accent:"transparent"}} onClick={()=>{setSelSvc(svc);setSelDay(null);setSelTime(null);}}>
                         <div style={{flex:1}}><div style={{fontWeight:600,fontSize:14,color:"#1C1B1F"}}>{svc.name}</div><div style={{fontSize:11,color:"#79607A"}}>{svc.dur} Min</div></div>
                         <div style={{fontWeight:800,fontSize:15,color:cat.accent}}>{svc.price}€</div>
                         {selSvc?.id===svc.id&&<Check size={16} color={cat.accent}/>}
@@ -357,16 +386,17 @@ export default function HautgefuehlApp(){
               <div style={{fontFamily:"Cormorant Garamond,serif",fontSize:26,color:"#2D1A27",marginBottom:4}}>Wann passt es?</div>
               <div style={{fontSize:13,color:"#79607A",marginBottom:18}}>Datum und Uhrzeit wählen</div>
               <div className="card" style={{padding:18,marginBottom:14}}>
-                <MiniCal year={calY} month={calM} setYear={setCalY} setMonth={setCalM} selDay={selDay} setSelDay={setSelDay}/>
+                <MiniCal year={calY} month={calM} setYear={setCalY} setMonth={setCalM} selDay={selDay} setSelDay={d=>{setSelDay(d);setSelTime(null);}}/>
               </div>
-              {selDay&&(
+              {selDay&&(()=>{const slots=availTimes(calY,calM,selDay,selSvc?.dur||60,selCat?.specialist,bookings);return(
                 <div style={{animation:"fadeIn 0.2s ease"}}>
                   <div style={{fontSize:12,fontWeight:700,color:"#2D1A27",marginBottom:10,letterSpacing:1}}>VERFÜGBARE ZEITEN</div>
+                  {slots.length===0&&<div style={{fontSize:13,color:"#A89BB0",marginBottom:20}}>An diesem Tag sind leider keine Zeiten mehr frei. Bitte wähle einen anderen Tag.</div>}
                   <div style={{display:"flex",flexWrap:"wrap",gap:8,marginBottom:20}}>
-                    {TIMES.map(t=><button key={t} className={`chip${selTime===t?" on":""}`} onClick={()=>setSelTime(t)}>{t}</button>)}
+                    {slots.map(t=><button key={t} className={`chip${selTime===t?" on":""}`} onClick={()=>setSelTime(t)}>{t}</button>)}
                   </div>
                 </div>
-              )}
+              );})()}
               <button className="fab" onClick={()=>selDay&&selTime&&setStep(3)} style={{opacity:selDay&&selTime?1:0.4}}>Weiter</button>
             </div>
           )}
@@ -409,7 +439,8 @@ export default function HautgefuehlApp(){
                   <div style={{fontWeight:900,fontSize:22,color:"#6B2F5E"}}>{selSvc?.price}€</div>
                 </div>
               </div>
-              <button className="fab" onClick={book} style={{opacity:form.name&&form.email?1:0.4}}>Termin bestätigen ✓</button>
+              <button className="fab" onClick={book} style={{opacity:form.name&&emailOk?1:0.4}}>Termin bestätigen ✓</button>
+              {form.email&&!emailOk&&<div style={{fontSize:12,color:"#DC2626",textAlign:"center",marginTop:8}}>Bitte gib eine gültige E-Mail-Adresse ein.</div>}
             </div>
           )}
         </div>
@@ -515,7 +546,7 @@ export default function HautgefuehlApp(){
           {proTab==="overview"&&(
             <div>
               <div style={{display:"flex",gap:10,marginBottom:18}}>
-                {[{label:"Termine",val:bookings.filter(b=>b.status!=="cancelled").length,bg1:"#FDE8F4",bg2:"#F3E8FF",col:"#DB2777"},{label:"Heute",val:bookings.filter(b=>b.date==="2026-06-08"&&b.status==="confirmed").length,bg1:"#E8F4FD",bg2:"#F0F9FF",col:"#0284C7"},{label:"Umsatz",val:`${revenue}€`,bg1:"#F3E8FF",bg2:"#FAF5FF",col:"#9333EA"}].map((s,i)=>(
+                {[{label:"Termine",val:bookings.filter(b=>b.status!=="cancelled").length,bg1:"#FDE8F4",bg2:"#F3E8FF",col:"#DB2777"},{label:"Heute",val:bookings.filter(b=>b.date===todayStr()&&b.status==="confirmed").length,bg1:"#E8F4FD",bg2:"#F0F9FF",col:"#0284C7"},{label:"Umsatz",val:`${revenue}€`,bg1:"#F3E8FF",bg2:"#FAF5FF",col:"#9333EA"}].map((s,i)=>(
                   <div key={i} style={{flex:1,background:`linear-gradient(135deg,${s.bg1},${s.bg2})`,borderRadius:22,padding:"16px 12px",textAlign:"center"}}>
                     <div style={{fontSize:22,fontWeight:900,color:s.col}}>{s.val}</div>
                     <div style={{fontSize:11,color:"#79607A",fontWeight:600,marginTop:3}}>{s.label}</div>
@@ -524,11 +555,11 @@ export default function HautgefuehlApp(){
               </div>
               <div className="card" style={{padding:18,marginBottom:16}}>
                 <div style={{fontSize:11,fontWeight:700,color:"#A89BB0",marginBottom:14,letterSpacing:1}}>BUCHUNGEN DIESE WOCHE</div>
-                {[["Mo",2],["Di",5],["Mi",3],["Do",6],["Fr",7],["Sa",4],["So",1]].map(([d,v])=>(
+                {DAYS_SHORT.map((d,i)=>(
                   <div key={d} style={{display:"flex",alignItems:"center",gap:10,marginBottom:9}}>
                     <div style={{width:22,fontSize:11,fontWeight:600,color:"#79607A"}}>{d}</div>
-                    <div style={{flex:1,height:9,background:"#F3EDF7",borderRadius:5,overflow:"hidden"}}><div style={{height:"100%",width:`${(v/7)*100}%`,background:"linear-gradient(90deg,#8B4F7A,#C084A8)",borderRadius:5}}/></div>
-                    <div style={{width:14,fontSize:12,fontWeight:700,color:"#6B2F5E"}}>{v}</div>
+                    <div style={{flex:1,height:9,background:"#F3EDF7",borderRadius:5,overflow:"hidden"}}><div style={{height:"100%",width:`${(weekCounts[i]/maxWeek)*100}%`,background:"linear-gradient(90deg,#8B4F7A,#C084A8)",borderRadius:5,transition:"width 0.4s ease"}}/></div>
+                    <div style={{width:14,fontSize:12,fontWeight:700,color:"#6B2F5E"}}>{weekCounts[i]}</div>
                   </div>
                 ))}
               </div>
@@ -597,16 +628,17 @@ export default function HautgefuehlApp(){
               </div>
               <div className="card" style={{padding:18,marginBottom:14}}>
                 <div style={{fontSize:11,fontWeight:700,color:"#A89BB0",marginBottom:14,letterSpacing:1}}>DATUM WÄHLEN</div>
-                <MiniCal year={nb.calY} month={nb.calM} setYear={y=>setNb({...nb,calY:y})} setMonth={m=>setNb({...nb,calM:m})} selDay={nb.day} setSelDay={d=>setNb({...nb,day:d})}/>
+                <MiniCal year={nb.calY} month={nb.calM} setYear={y=>setNb({...nb,calY:y})} setMonth={m=>setNb({...nb,calM:m})} selDay={nb.day} setSelDay={d=>setNb({...nb,day:d,time:""})}/>
               </div>
-              {nb.day&&(
+              {nb.day&&(()=>{const svc=SERVICES.find(s=>s.id===parseInt(nb.svcId));const cat=CATEGORIES.find(c=>c.id===nb.catId);const slots=availTimes(nb.calY,nb.calM,nb.day,svc?.dur||60,cat?.specialist,bookings);return(
                 <div style={{marginBottom:16,animation:"fadeIn 0.2s ease"}}>
                   <div style={{fontSize:11,fontWeight:700,color:"#A89BB0",marginBottom:10,letterSpacing:1}}>UHRZEIT</div>
+                  {slots.length===0&&<div style={{fontSize:13,color:"#A89BB0"}}>Keine freien Zeiten an diesem Tag.</div>}
                   <div style={{display:"flex",flexWrap:"wrap",gap:8}}>
-                    {TIMES.map(t=><button key={t} className={`chip${nb.time===t?" on":""}`} onClick={()=>setNb({...nb,time:t})}>{t}</button>)}
+                    {slots.map(t=><button key={t} className={`chip${nb.time===t?" on":""}`} onClick={()=>setNb({...nb,time:t})}>{t}</button>)}
                   </div>
                 </div>
-              )}
+              );})()}
               <button className="fab" style={{opacity:nb.client&&nb.svcId&&nb.day&&nb.time?1:0.4}} onClick={createAdminBooking}>Termin anlegen</button>
             </div>
           )}
@@ -646,7 +678,7 @@ export default function HautgefuehlApp(){
                     <button onClick={()=>openEditPromo(pr)} style={{flex:1,background:"#F3EDF7",color:"#6B2F5E",border:"none",borderRadius:12,padding:"10px 0",fontSize:13,fontWeight:600,cursor:"pointer",fontFamily:"inherit",display:"flex",alignItems:"center",justifyContent:"center",gap:6}}>
                       <Edit3 size={14}/> Bearbeiten
                     </button>
-                    <button onClick={()=>setPromos(p=>p.filter(x=>x.id!==pr.id))} style={{background:"#FEE2E2",color:"#DC2626",border:"none",borderRadius:12,padding:"10px 14px",cursor:"pointer"}}>
+                    <button onClick={()=>{if(window.confirm(`Aktion "${pr.title}" wirklich löschen?`))setPromos(p=>p.filter(x=>x.id!==pr.id));}} style={{background:"#FEE2E2",color:"#DC2626",border:"none",borderRadius:12,padding:"10px 14px",cursor:"pointer"}}>
                       <Trash2 size={14}/>
                     </button>
                   </div>
@@ -717,16 +749,17 @@ export default function HautgefuehlApp(){
             </div>
             <div style={{fontSize:11,fontWeight:700,color:"#A89BB0",marginBottom:10,letterSpacing:1}}>NEUES DATUM</div>
             <div className="card" style={{padding:16,marginBottom:14}}>
-              <MiniCal year={rebookCalY} month={rebookCalM} setYear={setRebookCalY} setMonth={setRebookCalM} selDay={rebookDay} setSelDay={setRebookDay}/>
+              <MiniCal year={rebookCalY} month={rebookCalM} setYear={setRebookCalY} setMonth={setRebookCalM} selDay={rebookDay} setSelDay={d=>{setRebookDay(d);setRebookTime(null);}}/>
             </div>
-            {rebookDay&&(
+            {rebookDay&&(()=>{const others=bookings.filter(b=>b.id!==activeBooking.id);const slots=availTimes(rebookCalY,rebookCalM,rebookDay,activeBooking.dur||60,activeBooking.specialist,others);return(
               <div style={{marginBottom:16,animation:"fadeIn 0.2s ease"}}>
                 <div style={{fontSize:11,fontWeight:700,color:"#A89BB0",marginBottom:10,letterSpacing:1}}>NEUE UHRZEIT</div>
+                {slots.length===0&&<div style={{fontSize:13,color:"#A89BB0"}}>Keine freien Zeiten an diesem Tag.</div>}
                 <div style={{display:"flex",flexWrap:"wrap",gap:8}}>
-                  {TIMES.map(t=><button key={t} className={`chip${rebookTime===t?" on":""}`} onClick={()=>setRebookTime(t)}>{t}</button>)}
+                  {slots.map(t=><button key={t} className={`chip${rebookTime===t?" on":""}`} onClick={()=>setRebookTime(t)}>{t}</button>)}
                 </div>
               </div>
-            )}
+            );})()}
             <button className="fab-sm" style={{opacity:rebookDay&&rebookTime?1:0.4}} onClick={rebookBooking}>Umbuchen bestätigen</button>
           </div>
         )}
